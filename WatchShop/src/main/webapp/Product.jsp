@@ -9,45 +9,89 @@
     <div class="row">
 
         <div class="col-lg-3">
-            <h1 class="h2 pb-4">Lựa chọn</h1>
-            <ul class="list-unstyled templatemo-accordion">
-                <li class="pb-3">
-                    <a class="collapsed d-flex justify-content-between h3 text-decoration-none" href="#">
-                        Loại
-                        <i class="fa fa-fw fa-chevron-circle-down mt-1"></i>
-                    </a>
-                    <ul class="collapse show list-unstyled pl-3">
-                        <c:forEach items="${listBrand}" var="listbrand">
-                            <li><a class="text-decoration-none"
-                                   href="ProductServlet?filterProduct=${listbrand.product.brand}">${listbrand.product.brand}</a>
-                            </li>
-                        </c:forEach>
-                    </ul>
-                </li>
-                <li class="pb-3">
-                    <a class="collapsed d-flex justify-content-between h3 text-decoration-none" href="#">
-                        Giá
-                        <i class="pull-right fa fa-fw fa-chevron-circle-down mt-1"></i>
-                    </a>
-                    <ul id="collapseTwo" class="collapse list-unstyled pl-3">
-                        <li><a class="text-decoration-none"
-                               href="ProductServlet?filterProduct=rangePrice&priceFrom=0&priceTo=100000">Less than
-                            <fmt:formatNumber type = "number" maxFractionDigits = "3" value = "100000" /> <i class="text-success">VND</i>
-                        </a></li>
-                        <li><a class="text-decoration-none"
-                               href="ProductServlet?filterProduct=rangePrice&priceFrom=100000&priceTo=200000">
-                            <fmt:formatNumber type = "number" maxFractionDigits = "3" value = "100000" /> - <fmt:formatNumber type = "number" maxFractionDigits = "3" value = "200000" /> <i class="text-success">VND</i>
-                        </a></li>
-                        <li><a class="text-decoration-none"
-                               href="ProductServlet?filterProduct=rangePrice&priceFrom=200000&priceTo=500000"><fmt:formatNumber type = "number" maxFractionDigits = "3" value = "200000" /> - <fmt:formatNumber type = "number" maxFractionDigits = "3" value = "500000" /> <i class="text-success">VND</i>
-                        </a></li>
-                        <li><a class="text-decoration-none"
-                               href="ProductServlet?filterProduct=rangePrice&priceFrom=500000&priceTo=10000000">More than
-                                <fmt:formatNumber type = "number" maxFractionDigits = "3" value = "500000" /> <i class="text-success">VND</i>
-                        </a></li>
-                    </ul>
-                </li>
-            </ul>
+            <h1 style="font-weight: 500" class="h2 pb-4 font-roboto">Lựa chọn</h1>
+<%--            <ul class="list-unstyled templatemo-accordion">--%>
+<%--                <li class="pb-3">--%>
+<%--                    <a class="collapsed d-flex justify-content-between h3 text-decoration-none" href="#">--%>
+<%--                        Loại--%>
+<%--                        <i class="fa fa-fw fa-chevron-circle-down mt-1"></i>--%>
+<%--                    </a>--%>
+<%--                    <ul class="collapse show list-unstyled pl-3">--%>
+<%--                        <c:forEach items="${listBrand}" var="listbrand">--%>
+<%--                            <li><a class="text-decoration-none"--%>
+<%--                                   href="ProductServlet?filterProduct=${listbrand.product.brand}">${listbrand.product.brand}</a>--%>
+<%--                            </li>--%>
+<%--                        </c:forEach>--%>
+<%--                    </ul>--%>
+<%--                </li>--%>
+<%--                <li class="pb-3">--%>
+<%--                    <a class="collapsed d-flex justify-content-between h3 text-decoration-none" href="#">--%>
+<%--                        Giá--%>
+<%--                        <i class="pull-right fa fa-fw fa-chevron-circle-down mt-1"></i>--%>
+<%--                    </a>--%>
+<%--                    <ul id="collapseTwo" class="collapse list-unstyled pl-3">--%>
+<%--                        <li><a class="text-decoration-none"--%>
+<%--                               href="ProductServlet?filterProduct=rangePrice&priceFrom=0&priceTo=100000">Less than--%>
+<%--                            <fmt:formatNumber type = "number" maxFractionDigits = "3" value = "100000" /> <i class="text-success">VND</i>--%>
+<%--                        </a></li>--%>
+<%--                        <li><a class="text-decoration-none"--%>
+<%--                               href="ProductServlet?filterProduct=rangePrice&priceFrom=100000&priceTo=200000">--%>
+<%--                            <fmt:formatNumber type = "number" maxFractionDigits = "3" value = "100000" /> - <fmt:formatNumber type = "number" maxFractionDigits = "3" value = "200000" /> <i class="text-success">VND</i>--%>
+<%--                        </a></li>--%>
+<%--                        <li><a class="text-decoration-none"--%>
+<%--                               href="ProductServlet?filterProduct=rangePrice&priceFrom=200000&priceTo=500000"><fmt:formatNumber type = "number" maxFractionDigits = "3" value = "200000" /> - <fmt:formatNumber type = "number" maxFractionDigits = "3" value = "500000" /> <i class="text-success">VND</i>--%>
+<%--                        </a></li>--%>
+<%--                        <li><a class="text-decoration-none"--%>
+<%--                               href="ProductServlet?filterProduct=rangePrice&priceFrom=500000&priceTo=10000000">More than--%>
+<%--                                <fmt:formatNumber type = "number" maxFractionDigits = "3" value = "500000" /> <i class="text-success">VND</i>--%>
+<%--                        </a></li>--%>
+<%--                    </ul>--%>
+<%--                </li>--%>
+<%--            </ul>--%>
+
+
+
+                <h5 class="section-title position-relative text-uppercase mb-3"><span class="pr-3">Theo giá</span></h5>
+                <div class="bg-light p-4 mb-30">
+                    <form>
+                        <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
+                            <a class="text-decoration-none"
+                               href="ProductServlet?filterProduct=rangePrice&priceFrom=0&priceTo=100000">Dưới
+                                <fmt:formatNumber type = "number" maxFractionDigits = "3" value = "100000" />
+                            </a>
+                        </div>
+                        <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
+                            <a class="text-decoration-none"
+                               href="ProductServlet?filterProduct=rangePrice&priceFrom=100000&priceTo=200000">Từ
+                                <fmt:formatNumber type = "number" maxFractionDigits = "3" value = "100000" /> - <fmt:formatNumber type = "number" maxFractionDigits = "3" value = "200000" />
+                            </a>
+                        </div>
+                        <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
+                            <a class="text-decoration-none"
+                               href="ProductServlet?filterProduct=rangePrice&priceFrom=200000&priceTo=500000">Từ <fmt:formatNumber type = "number" maxFractionDigits = "3" value = "200000" /> - <fmt:formatNumber type = "number" maxFractionDigits = "3" value = "500000" />
+                            </a>
+                        </div>
+                        <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
+                            <a class="text-decoration-none"
+                               href="ProductServlet?filterProduct=rangePrice&priceFrom=500000&priceTo=10000000">Hơn
+                                <fmt:formatNumber type = "number" maxFractionDigits = "3" value = "500000" />
+                            </a>
+                        </div>
+                    </form>
+                </div>
+
+            <h5 class="section-title position-relative text-uppercase mb-3 mt-5"><span class="pr-3">Theo loại</span></h5>
+            <div class="bg-light p-4 mb-30">
+                <form>
+                    <c:forEach items="${listBrand}" var="listbrand">
+                    <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
+                        <a class="text-decoration-none"
+                           href="ProductServlet?filterProduct=${listbrand.product.brand}">${listbrand.product.brand}</a>
+                    </div>
+                    </c:forEach>
+                </form>
+            </div>
+
         </div>
 
         <div class="col-lg-9">
@@ -70,7 +114,7 @@
                     <div class="col-md-4">
                         <div class="card mb-4 product-wap rounded-0">
                             <div class="card rounded-0">
-                                <img class="card-img rounded-0 img-fluid" src="${pl.imageProducts.get(0).imageUrl}">
+                                <img class="card-img rounded-0 img-fluid img-fit" src="${pl.imageProducts.get(0).imageUrl}">
                                 <div class="card-img-overlay rounded-0 product-overlay d-flex align-items-center justify-content-center">
                                     <ul class="list-unstyled">
 <%--                                        <li><a class="btn btn-success text-white" href="shop-single.html"><i--%>
@@ -86,10 +130,10 @@
                             <div class="card-body">
                                 <div style="white-space: nowrap;width: 100%;overflow: hidden;text-overflow: clip; ">
                                     <a href="ShowProductDetails?idProduct=${pl.product.idProduct}&brand=${pl.product.brand}"
-                                       class="h3 text-decoration-none">${pl.product.productName}</a>
+                                       class="h3 text-decoration-none font-roboto list-product-name">${pl.product.productName}</a>
                                 </div>
                                 <ul class="w-100 list-unstyled d-flex justify-content-between mb-3">
-                                    <li>${pl.typeName}</li>
+                                    <li style="display: none">${pl.typeName}</li>
                                     <li class="pt-2">
                                         <span class="product-color-dot color-dot-red float-left rounded-circle ml-1"></span>
                                         <span class="product-color-dot color-dot-blue float-left rounded-circle ml-1"></span>
@@ -98,7 +142,9 @@
                                         <span class="product-color-dot color-dot-green float-left rounded-circle ml-1"></span>
                                     </li>
                                 </ul>
-                                <ul class="list-unstyled d-flex justify-content-center mb-1">
+                                <h5 class="text-center mb-0 d-flex justify-content-center"><fmt:formatNumber type = "number" maxFractionDigits = "3" value = "${pl.typePrice}" />
+                                </h5>
+                                <ul class="list-unstyled d-flex justify-content-center mb-1 rating">
                                     <li>
                                         <i class="text-warning fa fa-star"></i>
                                         <i class="text-warning fa fa-star"></i>
@@ -106,9 +152,8 @@
                                         <i class="text-muted fa fa-star"></i>
                                         <i class="text-muted fa fa-star"></i>
                                     </li>
+                                    <p style="margin-left: 5px!important;" class="rating align-self-endd m-0"> (20)</p>
                                 </ul>
-                                <p class="text-center mb-0"><fmt:formatNumber type = "number" maxFractionDigits = "3" value = "${pl.typePrice}" /> <i class="text-success">VND</i>
-                                </p>
                             </div>
                         </div>
                     </div>
