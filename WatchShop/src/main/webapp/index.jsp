@@ -89,9 +89,9 @@
 <section class="container py-5">
     <div class="row text-center pt-3">
         <div class="col-lg-6 m-auto">
-            <h1 class="fw-bolder">Sản Phẩm Của Tháng</h1>
+            <h1 class="fw-bolder">Gợi ý hôm nay</h1>
             <p>
-                Sản phẩm được khánh hàng lựa chọn và đánh giá cao về chất lượng sử dụng.
+                Thiết kế nhỏ gọn, xinh xắn, mang đến sự sinh động và độc đáo cho không gian của bạn.
             </p>
         </div>
     </div>
@@ -130,7 +130,7 @@
             <div class="col-lg-6 m-auto">
                 <h1 class="fw-bolder">Sản Phẩm Nổi Trội</h1>
                 <p>
-                    Dòng sản phẩm nổi trội với thiết kế đẹp và chất lượng tiêu chuẩn cao.
+                    Sự lựa chọn hàng đầu của khách hàng, đem lại giá trị và sự hài lòng tối đa trong mỗi trải nghiệm sử dụng.
                 </p>
             </div>
         </div>
@@ -139,7 +139,7 @@
                 <div class="col-12 col-md-4 mb-4">
                     <div class="card h-100">
                         <a href="ShowProductDetails?idProduct=${ptl.product.idProduct}&brand=${ptl.product.brand}">
-                            <img src="${ptl.imageProducts.get(0).imageUrl}" class="card-img-top" alt="...">
+                            <img src="${ptl.imageProducts.get(0).imageUrl}" class="card-img-top img-fit" alt="...">
                         </a>
                         <div class="card-body">
                             <ul class="list-unstyled d-flex justify-content-between">
@@ -150,13 +150,12 @@
                                     <i class="text-warning fa fa-star"></i>
                                     <i class="text-warning fa fa-star"></i>
                                 </li>
-                                <li class="text-muted text-right"><fmt:formatNumber type="number" maxFractionDigits="3"
-                                                                                    value="${ptl.typePrice}"/><i
-                                        class="text-success">VND</i></li>
+                                <li class="text-right font-roboto" style="font-weight: bold"><fmt:formatNumber type="number" maxFractionDigits="3"
+                                                                                    value="${ptl.typePrice}"/>
                             </ul>
                             <a href="ShowProductDetails?idProduct=${ptl.product.idProduct}&brand=${ptl.product.brand}"
-                               class="fs-sm-4 fw-bolder text-decoration-none text-dark">${ptl.product.productName}</a>
-                            <p class="card-text ">${ptl.product.brand}</p>
+                               class="fs-sm-4 fw-bolder text-decoration-none text-dark list-product-name">${ptl.product.productName}</a>
+<%--                            <p class="card-text ">${ptl.product.brand}</p>--%>
                             <p class="card-text ">${ptl.product.origin}</p>
                             <p class="text-muted">Reviews (74)</p>
                         </div>

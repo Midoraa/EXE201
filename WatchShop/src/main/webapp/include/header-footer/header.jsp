@@ -67,7 +67,7 @@
     <div class="container d-flex justify-content-between align-items-center">
         <img class="rounded-circle" src="assets/img/logo.png" style="width: 100px;margin-right: 10px;"/>
         <a class="navbar-brand text-success logo h1 align-self-center" href="Home" style="">
-            Dynamic House
+            MiniMe
         </a>
 
         <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#templatemo_main_nav" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
