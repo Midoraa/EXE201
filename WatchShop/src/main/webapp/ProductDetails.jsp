@@ -139,8 +139,19 @@
                         </ul>
 
                         <h6>Chi tiết sản phẩm:</h6>
-                        <p>${product.detail}</p>
-
+<%--                        <p>${product.detail}</p>--%>
+                        <div class="product-details">
+                            <div class="product-title">Standee Lắc Đầu Siêu Dễ Thương</div>
+                            <div class="product-description">
+                                Standee lắc đầu là sản phẩm trang trí độc đáo và dễ thương, thường được sử dụng trên taplo xe hơi hoặc bàn làm việc. Với thiết kế ngộ nghĩnh, hình ảnh bé đáng yêu trên chiếc xe đạp cùng phụ kiện như bóng bay và giỏ hoa tạo nên cảm giác vui tươi, sinh động. Standee làm từ nhựa cao cấp, bền bỉ, an toàn, và có đế giữ chắc chắn giúp sản phẩm không dễ bị đổ. Đặc biệt, đầu standee có khả năng lắc lư theo chuyển động, tạo điểm nhấn thú vị. Sản phẩm không chỉ là món trang trí bắt mắt mà còn là món quà ý nghĩa, mang lại niềm vui cho người nhận.
+                            </div>
+                            <ul class="product-specs">
+                                <li><strong>Kích thước:</strong> Cao 15cm x Rộng 10cm</li>
+                                <li><strong>Chất liệu:</strong> Mica (Acrylic) in UV cao cấp, in 1 mặt</li>
+                                <li><strong>Màu sắc:</strong> Như hình</li>
+                                <li><strong>Xuất xứ:</strong> Việt Nam</li>
+                            </ul>
+                        </div>
                         <div action="" method="GET" name="product-card">
                             <input type="hidden" name="product-title" value="Activewear">
                             <div class="row">
