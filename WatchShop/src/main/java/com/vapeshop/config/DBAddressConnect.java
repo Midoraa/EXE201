@@ -9,7 +9,7 @@ public class DBAddressConnect {
     public static String dbName = "APIDiachi";
     public static String portNumber = "1433";
     public static String userID = "sa";
-    public static String password = "1234";
+    public static String password = "123456";
 
     public static Connection getConnection() throws SQLException, ClassNotFoundException {
         String url = "jdbc:sqlserver://localhost:1433;" + "databaseName=" + dbName + ";encrypt=false";
